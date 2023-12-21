@@ -285,7 +285,7 @@
 &rgb_ug RGB_BRI    &mt DOUBLE_QUOTES SINGLE_QUOTE  &kp PRINTSCREEN                 &kp LS(RPAR)  &kp N4    &kp TILDE                                &trans            &kp NUMBER_4  &kp N5  &kp N6  &kp PLUS              &kp LCTRL
 &rgb_ug RGB_BRD    &kp GRAVE                       &kp UNDER                       &kp FSLH      &trans    &kp LESS_THAN                            &kp GREATER_THAN  &kp N1        &kp N2  &kp N3  &kp MINUS             &kp STAR
 &rgb_ug RGB_TOG    &rgb_ug RGB_EFF                 &rgb_ug RGB_COLOR_HSB(0,0,100)  &trans        &kp PIPE  &kp BACKSLASH  &trans            &trans  &kp KP_PLUS       &kp N0        &trans  &trans  &trans                &trans
-                                                                                   &trans        &trans    &trans         &kp UNDERSCORE    &trans  &trans            &trans        &trans
+                                                                                   &trans        &trans    &trans         &kp UNDERSCORE    &trans  &kp SPACE         &trans        &trans
             >;
 
             sensor-bindings =
@@ -295,11 +295,11 @@
 
         raise_layer {
             bindings = <
-&trans      &kp F1            &kp F2             &kp F3             &kp F4         &kp F5                           &kp F6     &kp F7    &kp F8          &kp F9         &kp F10    &kp DELETE
-&bt BT_CLR  &bt BT_SEL 0      &kp LG(D)          &kp LG(UP)         &kp LG(TAB)    &bt BT_SEL 4                     &kp F7     &kp HOME  &kp UP_ARROW    &kp END        &kp PG_UP  &kp F12
-&trans      &kp EXCL          &kp LG(LEFT)       &kp LG(DOWN)       &kp LG(RIGHT)  &kp LESS_THAN                    &kp CARET  &kp LEFT  &kp DOWN_ARROW  &kp RIGHT      &kp PG_DN  &kp TILDE
-&trans      &ext_power EP_ON  &ext_power EP_OFF  &ext_power EP_TOG  &kp PIPE       &kp BACKSLASH  &trans    &trans  &trans     &kp END   &kp PLUS        &kp PAGE_DOWN  &kp RBRC   &kp PIPE
-                                                 &trans             &trans         &trans         &trans    &trans  &trans     &trans    &trans
+&trans      &kp F1            &kp F2             &kp F3             &kp F4         &kp F5                           &kp F6      &kp F7      &kp F8          &kp F9      &kp F10    &kp DELETE
+&bt BT_CLR  &bt BT_SEL 0      &kp LG(D)          &kp LG(UP)         &kp LG(TAB)    &bt BT_SEL 4                     &kp K_UNDO  &kp HOME    &kp UP_ARROW    &kp END     &kp PG_UP  &kp F12
+&trans      &kp EXCL          &kp LG(LEFT)       &kp LG(DOWN)       &kp LG(RIGHT)  &kp LESS_THAN                    &kp K_REDO  &kp LEFT    &kp DOWN_ARROW  &kp RIGHT   &kp PG_DN  &kp TILDE
+&trans      &ext_power EP_ON  &ext_power EP_OFF  &ext_power EP_TOG  &kp PIPE       &kp BACKSLASH  &trans    &trans  &trans      &kp K_UNDO  &kp PLUS        &kp K_REDO  &kp RBRC   &kp PIPE
+                                                 &trans             &trans         &trans         &trans    &trans  &trans      &trans      &trans
             >;
 
             sensor-bindings =
