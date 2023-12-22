@@ -251,13 +251,6 @@
                 <&macro_release>,
                 <&mo MACRO_PLACEHOLDER>;
         };
-
-        light: light {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&bl BL_SET 100>;
-            label = "LIGHT";
-        };
     };
 
     keymap {
