@@ -36,7 +36,7 @@
             compatible = "zmk,behavior-sensor-rotate-var";
             label = "RGB_BRIGHTNESS";
             #sensor-binding-cells = <2>;
-            bindings = <&rgb_ug RGB_BRI>, <&rgb_ug RGB_BRD>;
+            bindings = <&none>, <&none>;
         };
 
         ea_m: ea_m {
