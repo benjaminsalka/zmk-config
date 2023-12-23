@@ -32,9 +32,9 @@
 
 / {
     behaviors {
-        new_behavior: new_behavior {
+        rgb_brightness: rgb_brightness {
             compatible = "zmk,behavior-sensor-rotate-var";
-            label = "NEW_BEHAVIOR";
+            label = "RGB_BRIGHTNESS";
             #sensor-binding-cells = <2>;
             bindings = <&none>, <&none>;
         };
@@ -298,18 +298,16 @@
                 <&inc_dec_kp UP_ARROW DOWN>;
         };
 
-         layer_3 {
+        layer_3 {
             bindings = <
-&bt BT_CLR       &bt BT_SEL 0   &bt BT_SEL 1   &bt BT_SEL 2  &bt BT_SEL 3  &trans                       &rgb_ug RGB_COLOR_HSB(0,86,34)  &rgb_ug RGB_COLOR_HSB(235,56,47)  &rgb_ug RGB_COLOR_HSB(289,73,39)  &rgb_ug RGB_COLOR_HSB(164,73,34)  &rgb_ug RGB_EFF  &rgb_ug RGB_TOG
-&rgb_ug RGB_BRI  &bt BT_DISC 0  &bt BT_DISC 1  &trans        &trans        &trans                       &trans                          &trans                            &trans                            &rgb_ug RGB_SPI                   &rgb_ug RGB_HUI  &rgb_ug RGB_SAI
-&rgb_ug RGB_BRD  &trans         &trans         &trans        &trans        &trans                       &trans                          &trans                            &trans                            &rgb_ug RGB_SPD                   &rgb_ug RGB_HUD  &rgb_ug RGB_SAD
-&trans           &trans         &trans         &trans        &trans        &trans  &trans    &kp LC(W)  &trans                          &trans                            &trans                            &trans                            &trans           &trans
-                                               &trans        &trans        &trans  &trans    &trans     &trans                          &trans                            &trans
+&bt BT_CLR  &bt BT_SEL 0   &bt BT_SEL 1   &bt BT_SEL 2  &bt BT_SEL 3  &trans                       &rgb_ug RGB_COLOR_HSB(0,86,34)  &rgb_ug RGB_COLOR_HSB(235,56,47)  &rgb_ug RGB_COLOR_HSB(289,73,39)  &rgb_ug RGB_COLOR_HSB(164,73,34)  &rgb_ug RGB_EFF  &rgb_ug RGB_TOG
+&trans      &bt BT_DISC 0  &bt BT_DISC 1  &trans        &trans        &trans                       &trans                          &trans                            &trans                            &rgb_ug RGB_SPI                   &rgb_ug RGB_HUI  &rgb_ug RGB_SAI
+&trans      &trans         &trans         &trans        &trans        &trans                       &trans                          &trans                            &trans                            &rgb_ug RGB_SPD                   &rgb_ug RGB_HUD  &rgb_ug RGB_SAD
+&trans      &trans         &trans         &trans        &trans        &trans  &trans    &kp LC(W)  &trans                          &trans                            &trans                            &trans                            &trans           &trans
+                                          &trans        &trans        &trans  &trans    &trans     &trans                          &trans                            &trans
             >;
 
-            sensor-bindings =
-                <&inc_dec_kp C_VOLUME_UP C_VOL_DN>,
-                <&inc_dec_kp LS(TAB) TAB>;
+            sensor-bindings = <&rgb_brightness 0 0>, <&inc_dec_kp LS(TAB) TAB>;
         };
     };
 };
