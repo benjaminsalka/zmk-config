@@ -16,12 +16,12 @@
 
 &left_encoder {
     compatible = "alps,ec11";
-    steps = <72>;
+    steps = <60>;
 };
 
 &right_encoder {
     compatible = "alps,ec11";
-    steps = <72>;
+    steps = <60>;
 };
 
 &sensors {
