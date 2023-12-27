@@ -261,13 +261,13 @@
 &kp ESC         &kp N1  &kp N2  &kp N3            &kp N4          &kp N5                               &kp N6  &kp N7    &kp N8               &kp N9            &kp N0           &kp EQUAL
 &kp TAB         &kp Q   &kp W   &kp E             &kp R           &kp T                                &kp Y   &kp U     &kp I                &kp O             &kp P            &aa_m
 &kp LEFT_SHIFT  &kp A   &kp S   &kp D             &kp F           &kp G                                &kp H   &kp J     &kp K                &kp L             &ea_m            &oe_m
-&kp LCTRL       &kp Z   &kp X   &kp C             &kp V           &kp B   &kp C_MUTE    &kp LC(W)      &kp N   &kp M     &mt SEMICOLON COMMA  &mt COLON PERIOD  &mt MINUS SLASH  &kp ENTER
+&lm 4 LCTRL     &kp Z   &kp X   &kp C             &kp V           &kp B   &kp C_MUTE    &kp LC(W)      &kp N   &kp M     &mt SEMICOLON COMMA  &mt COLON PERIOD  &mt MINUS SLASH  &kp ENTER
                                 &kp LEFT_BRACKET  &lm 3 LEFT_ALT  &mo 1   &kp SPACE     &kp BACKSPACE  &mo 2   &kp LGUI  &kp RIGHT_BRACKET
             >;
 
             sensor-bindings =
                 <&inc_dec_kp C_VOL_DN C_VOLUME_UP>,
-                <&inc_dec_kp PAGE_UP PAGE_DOWN>;
+                <&inc_dec_kp UP_ARROW DOWN_ARROW>;
         };
 
         lower_layer {
@@ -281,7 +281,7 @@
 
             sensor-bindings =
                 <&inc_dec_kp LEFT RIGHT>,
-                <&inc_dec_kp UP_ARROW DOWN_ARROW>;
+                <&inc_dec_kp RIGHT_ARROW LEFT_ARROW>;
         };
 
         raise_layer {
@@ -298,7 +298,7 @@
                 <&inc_dec_kp UP_ARROW DOWN>;
         };
 
-        layer_3 {
+        alt_layer {
             bindings = <
 &bt BT_CLR  &bt BT_SEL 0   &bt BT_SEL 1   &bt BT_SEL 2  &bt BT_SEL 3  &trans                       &rgb_ug RGB_COLOR_HSB(0,0,22)  &rgb_ug RGB_COLOR_HSB(235,70,12)  &rgb_ug RGB_COLOR_HSB(289,70,13)  &rgb_ug RGB_COLOR_HSB(164,73,13)  &rgb_ug RGB_EFF  &rgb_ug RGB_TOG
 &trans      &bt BT_DISC 0  &bt BT_DISC 1  &trans        &trans        &trans                       &trans                         &trans                            &trans                            &rgb_ug RGB_SPI                   &rgb_ug RGB_HUI  &rgb_ug RGB_BRI
@@ -308,6 +308,18 @@
             >;
 
             sensor-bindings = <&rgb_brightness 0 0>, <&inc_dec_kp LS(TAB) TAB>;
+        };
+
+        ctrl_layer {
+            bindings = <
+&trans  &trans  &trans  &trans  &trans  &trans                    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans                    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans                    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans  &trans
+                        &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans
+            >;
+
+            sensor-bindings = <&inc_dec_kp 0 0>, <&inc_dec_kp TAB LS(TAB)>;
         };
     };
 };
