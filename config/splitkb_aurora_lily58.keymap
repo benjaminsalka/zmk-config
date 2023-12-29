@@ -261,6 +261,25 @@
                 <&macro_release>,
                 <&mo MACRO_PLACEHOLDER>;
         };
+
+        RGB_layer: RGB_layer {
+            compatible = "zmk,behavior-macro-two-param";
+            wait-ms = <0>;
+            tap-ms = <0>;
+            #binding-cells = <2>;
+            bindings =
+                <&rgb_ug RGB_ON &macro_param_1to1>,
+                <&macro_press>,
+                <&mo MACRO_PLACEHOLDER &macro_param_2to2>,
+                <&macro_press>,
+                <&rgb_ug RGB_COLOR_HSB_CMD MACRO_PLACEHOLDER>,
+                <&macro_pause_for_release>,
+                <&rgb_ug RGB_OFF &macro_param_1to1>,
+                <&macro_release>,
+                <&mo MACRO_PLACEHOLDER>;
+
+            label = "RGB_LAYER";
+        };
     };
 
     keymap {
@@ -268,11 +287,11 @@
 
         default_layer {
             bindings = <
-&kp ESC         &kp N1  &kp N2  &kp N3            &kp N4          &kp N5                               &kp N6  &kp N7    &kp N8               &kp N9            &kp N0           &kp EQUAL
-&kp TAB         &kp Q   &kp W   &kp E             &kp R           &kp T                                &kp Y   &kp U     &kp I                &kp O             &kp P            &aa_m
-&kp LEFT_SHIFT  &kp A   &kp S   &kp D             &kp F           &kp G                                &kp H   &kp J     &kp K                &kp L             &ea_m            &oe_m
-&lm 4 LCTRL     &kp Z   &kp X   &kp C             &kp V           &kp B   &kp C_MUTE    &kp LC(W)      &kp N   &kp M     &mt SEMICOLON COMMA  &mt COLON PERIOD  &mt MINUS SLASH  &kp ENTER
-                                &kp LEFT_BRACKET  &lm 3 LEFT_ALT  &mo 1   &kp SPACE     &kp BACKSPACE  &mo 2   &kp LGUI  &kp RIGHT_BRACKET
+&kp ESC         &kp N1  &kp N2  &kp N3            &kp N4          &kp N5                                                             &kp N6                                      &kp N7    &kp N8               &kp N9            &kp N0           &kp EQUAL
+&kp TAB         &kp Q   &kp W   &kp E             &kp R           &kp T                                                              &kp Y                                       &kp U     &kp I                &kp O             &kp P            &aa_m
+&kp LEFT_SHIFT  &kp A   &kp S   &kp D             &kp F           &kp G                                                              &kp H                                       &kp J     &kp K                &kp L             &ea_m            &oe_m
+&lm 4 LCTRL     &kp Z   &kp X   &kp C             &kp V           &kp B                                 &kp C_MUTE    &kp LC(W)      &kp N                                       &kp M     &mt SEMICOLON COMMA  &mt COLON PERIOD  &mt MINUS SLASH  &kp ENTER
+                                &kp LEFT_BRACKET  &lm 3 LEFT_ALT  &RGB_layer 1 RGB_COLOR_HSB(0,100,50)  &kp SPACE     &kp BACKSPACE  &RGB_layer 2 RGB_COLOR_HSB_VAL(228,100,52)  &kp LGUI  &kp RIGHT_BRACKET
             >;
 
             sensor-bindings =
