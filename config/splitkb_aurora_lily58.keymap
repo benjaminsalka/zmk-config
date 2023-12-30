@@ -30,6 +30,11 @@
     triggers-per-rotation = <24>;
 };
 
+&mt {
+    tapping-term-ms = <200>;
+    quick-tap-ms = <300>;
+};
+
 / {
     behaviors {
         rgb_brightness: rgb_brightness {
