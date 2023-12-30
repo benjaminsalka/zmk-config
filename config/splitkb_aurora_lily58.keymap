@@ -262,7 +262,11 @@
             wait-ms = <0>;
             tap-ms = <0>;
             #binding-cells = <2>;
-            bindings = <&rgb_ug RGB_ON &macro_param_1to1 &to MACRO_PLACEHOLDER &macro_param_2to2 &rgb_ug RGB_COLOR_HSB_CMD MACRO_PLACEHOLDER>;
+            bindings =
+                <&rgb_ug RGB_ON &macro_param_1to1 &to MACRO_PLACEHOLDER>,
+                <&macro_wait_time 50>,
+                <&macro_param_2to2 &rgb_ug RGB_COLOR_HSB_CMD MACRO_PLACEHOLDER>;
+
             label = "RGB_LAYER";
         };
 
