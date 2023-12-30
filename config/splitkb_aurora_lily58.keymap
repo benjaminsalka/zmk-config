@@ -264,7 +264,7 @@
             #binding-cells = <2>;
             bindings =
                 <&rgb_ug RGB_ON &macro_param_1to1 &to MACRO_PLACEHOLDER>,
-                <&macro_wait_time 50>,
+                <&macro_wait_time 100>,
                 <&macro_param_2to2 &rgb_ug RGB_COLOR_HSB_CMD MACRO_PLACEHOLDER>;
 
             label = "RGB_LAYER";
@@ -299,11 +299,11 @@
 
         lower_layer {
             bindings = <
-&trans  &bt BT_SEL 0                    &bt BT_SEL 1     &bt BT_SEL 2  &trans    &bt BT_CLR                               &trans            &kp N7        &kp N8  &kp N9  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS
-&trans  &mt DOUBLE_QUOTES SINGLE_QUOTE  &kp PRINTSCREEN  &kp LS(RPAR)  &kp N4    &kp TILDE                                &trans            &kp NUMBER_4  &kp N5  &kp N6  &kp PLUS              &kp LCTRL
-&trans  &kp GRAVE                       &kp UNDER        &kp FSLH      &trans    &kp LESS_THAN                            &kp GREATER_THAN  &kp N1        &kp N2  &kp N3  &kp MINUS             &kp STAR
-&trans  &trans                          &trans           &trans        &kp PIPE  &kp BACKSLASH  &trans            &trans  &kp KP_PLUS       &kp N0        &trans  &trans  &trans                &trans
-                                                         &trans        &trans    &base_layer    &kp UNDERSCORE    &trans  &kp SPACE         &trans        &trans
+&trans  &bt BT_SEL 0                    &bt BT_SEL 1     &bt BT_SEL 2  &trans    &bt BT_CLR                               &kp LEFT_PARENTHESIS  &kp N7        &kp N8  &kp N9  &kp RIGHT_PARENTHESIS  &trans
+&trans  &mt DOUBLE_QUOTES SINGLE_QUOTE  &kp PRINTSCREEN  &kp LS(RPAR)  &kp N4    &kp TILDE                                &trans                &kp NUMBER_4  &kp N5  &kp N6  &kp PLUS               &kp LCTRL
+&trans  &kp GRAVE                       &kp UNDER        &kp FSLH      &trans    &kp LESS_THAN                            &kp GREATER_THAN      &kp N1        &kp N2  &kp N3  &kp MINUS              &kp STAR
+&trans  &trans                          &trans           &trans        &kp PIPE  &kp BACKSLASH  &trans            &trans  &kp KP_PLUS           &kp N0        &trans  &trans  &trans                 &trans
+                                                         &trans        &trans    &base_layer    &kp UNDERSCORE    &trans  &kp SPACE             &trans        &trans
             >;
 
             sensor-bindings =
