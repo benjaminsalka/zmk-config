@@ -28,6 +28,8 @@
     compatible = "zmk,keymap-sensors";
     sensors = <&left_encoder &right_encoder>;
     triggers-per-rotation = <24>;
+    debounce-press-ms = <3>;
+    debounce-release-ms = <3>;
 };
 
 / {
