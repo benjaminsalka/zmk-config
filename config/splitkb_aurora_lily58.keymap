@@ -354,7 +354,9 @@
                                           &trans        &trans  &trans  &trans    &trans     &trans                         &trans                            &trans
             >;
 
-            sensor-bindings = <&rgb_brightness 0 0>, <&inc_dec_kp LS(TAB) TAB>;
+            sensor-bindings =
+                <&inc_dec_kp TAB LS(TAB)>,
+                <&inc_dec_kp LS(TAB) TAB>;
         };
 
         ctrl_layer {
