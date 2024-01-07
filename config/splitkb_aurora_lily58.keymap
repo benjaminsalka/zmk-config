@@ -321,7 +321,7 @@
 
             sensor-bindings =
                 <&inc_dec_kp C_VOL_DN C_VOLUME_UP>,
-                <&inc_dec_kp UP_ARROW DOWN_ARROW>;
+                <&inc_dec_kp PAGE_UP PAGE_DOWN>;
         };
 
         lower_layer {
@@ -334,22 +334,22 @@
             >;
 
             sensor-bindings =
-                <&inc_dec_kp UP_ARROW DOWN_ARROW>,
-                <&inc_dec_kp LEFT_ARROW RIGHT_ARROW>;
+                <&inc_dec_kp RIGHT_ARROW LEFT_ARROW>,
+                <&inc_dec_kp UP_ARROW DOWN_ARROW>;
         };
 
         raise_layer {
             bindings = <
-&trans  &kp F1    &kp F2           &kp F3        &kp F4         &kp F5                           &kp F6             &kp F7         &kp F8          &kp F9            &kp F10    &kp DELETE
-&trans  &trans    &kp PRINTSCREEN  &kp LG(UP)    &kp LG(TAB)    &trans                           &kp C_AC_UNDO      &kp HOME       &kp UP_ARROW    &kp END           &kp PG_UP  &kp F12
-&trans  &kp EXCL  &kp LG(LEFT)     &kp LG(DOWN)  &kp LG(RIGHT)  &kp LESS_THAN                    &kp LG(C_AC_REDO)  &kp LEFT       &kp DOWN_ARROW  &kp RIGHT         &kp PG_DN  &kp TILDE
-&trans  &trans    &trans           &trans        &kp PIPE       &kp BACKSLASH  &trans    &trans  &trans             &kp C_AC_BACK  &kp PLUS        &kp C_AC_FORWARD  &kp RBRC   &kp PIPE
-                                   &trans        &trans         &base_layer    &trans    &trans  &base_layer        &trans         &trans
+&trans  &kp F1    &kp F2           &kp F3        &kp F4         &kp F5                                  &kp F6             &kp F7         &kp F8          &kp F9            &kp F10    &kp DELETE
+&trans  &trans    &kp PRINTSCREEN  &kp LG(UP)    &kp LG(TAB)    &trans                                  &kp C_AC_UNDO      &kp HOME       &kp UP_ARROW    &kp END           &kp PG_UP  &kp F12
+&trans  &kp EXCL  &kp LG(LEFT)     &kp LG(DOWN)  &kp LG(RIGHT)  &kp LESS_THAN                           &kp LG(C_AC_REDO)  &kp LEFT       &kp DOWN_ARROW  &kp RIGHT         &kp PG_DN  &kp TILDE
+&trans  &trans    &trans           &trans        &kp PIPE       &kp BACKSLASH  &trans    &kp C_AC_ZOOM  &trans             &kp C_AC_BACK  &kp PLUS        &kp C_AC_FORWARD  &kp RBRC   &kp PIPE
+                                   &trans        &trans         &base_layer    &trans    &trans         &base_layer        &trans         &trans
             >;
 
             sensor-bindings =
-                <&inc_dec_kp PAGE_UP PAGE_DOWN>,
-                <&inc_dec_kp UP_ARROW DOWN>;
+                <&inc_dec_kp LS(TAB) TAB>,
+                <&inc_dec_kp C_AC_ZOOM_IN C_AC_ZOOM_OUT>;
         };
 
         alt_layer {
@@ -378,7 +378,7 @@
             sensor-bindings = <&inc_dec_kp 0 0>, <&inc_dec_kp LS(TAB) TAB>;
         };
 
-        win_layer {
+        shift_layer {
             bindings = <
 &trans  &trans  &trans  &trans  &trans  &trans                    &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans                    &trans  &trans  &trans  &trans  &trans  &trans
