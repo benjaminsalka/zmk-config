@@ -106,6 +106,13 @@
             #binding-cells = <0>;
             bindings = <&kp LEFT_SHIFT>, <&caps_word>;
         };
+
+        shift_ctrl_dance: shift_ctrl_dance {
+            compatible = "zmk,behavior-tap-dance";
+            label = "SHIFT_CTRL_DANCE";
+            #binding-cells = <0>;
+            bindings = <&kp LEFT_SHIFT>, <&caps_word>;
+        };
     };
 
     macros {
