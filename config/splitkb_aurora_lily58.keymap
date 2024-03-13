@@ -116,6 +116,42 @@
     };
 
     macros {
+
+        DK_QMARK: DK_QMARK {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kt UNDERSCORE>;
+            label = "DK_QMARK";
+        };
+
+        DK_APOS: DK_APOS {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp NUHS>;
+            label = "DK_APOS";
+        };
+
+        DK_LESS: DK_LESS {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp NUBS>;
+            label = "DK_LESS";
+        };
+
+        DK_GREATER: DK_GREATER {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kt LS(NUBS)>;
+            label = "DK_GREATER";
+        };
+
+        DK_PIPE: DK_PIPE {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp RA(EQUAL)>;
+            label = "DK_PIPE";
+        };
+
         ae: ae {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
@@ -312,11 +348,12 @@
 
         default_layer {
             bindings = <
-&kp ESC              &kp N1  &kp N2  &kp N3    &kp N4                  &kp N5                                  &kp N6     &kp N7     &kp N8               &kp N9            &kp N0           &kp DEL
-&kp TAB              &kp Q   &kp W   &kp E     &kp R                   &kp T                                   &kp Y      &kp U      &kp I                &kp O             &kp P            &aa_m
-&shift_dance         &kp A   &kp S   &kp D     &kp F                   &kp G                                   &kp H      &kp J      &kp K                &kp L             &ea_m            &oe_m
-&hold_layer 4 LCTRL  &kp Z   &kp X   &kp C     &kp V                   &kp B      &kp C_MUTE    &kp LG(D)      &kp N      &kp M      &mt SEMICOLON COMMA  &mt COLON PERIOD  &mt MINUS SLASH  &shift_ctrl_dance
-                                     &kp LWIN  &hold_layer 3 LEFT_ALT  &L1_dance  &kp SPACE     &kp BACKSPACE  &L2_dance  &kp ENTER  &kp EQUAL
+&kp ESC         &kp N1      &kp N2      &kp N3        &kp N4            &kp N5                                           &kp N6                     &kp N7       &kp N8         &kp N9          &kp N0              &DK_APOS
+&kp TAB         &kp Q       &kp W       &kp E         &kp R             &kp T                                            &kp Y                      &kp U        &kp I          &kp O           &kp P               &kp LEFT_BRACKET
+&kp LEFT_SHIFT  &mt LGUI A  &mt LALT S  &mt LCTRL D   &mt LEFT_SHIFT F  &kp G                                            &kp H                      &mt RSHFT J  &mt RCTRL K    &mt LEFT_ALT L  &mt RIGHT_GUI SEMI  &kp APOS
+&kp LCTRL       &kp Z       &kp X       &kp C         &kp V             &kp B      &kp C_MUTE    &mt LC(N0) PRINTSCREEN  &kp N                      &kp M        &kp COMMA      &kp PERIOD      &kp FSLH            &mt RIGHT_SHIFT CAPSLOCK
+                                        &kp LEFT_ALT  &kp ESCAPE        &lt 1 TAB  &kp SPACE     &kp ENTER               &lt_backspace 2 BACKSPACE  &kp DEL      &mt RALT NUHS
+
             >;
 
             sensor-bindings =
