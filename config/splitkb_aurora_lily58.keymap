@@ -36,6 +36,18 @@
             bindings = <&none>, <&none>;
         };
 
+         lt_backspace: lt_backspace {
+            compatible = "zmk,behavior-hold-tap";
+            label = "LT_BACKSPACE";
+            bindings = <&mo>, <&kp>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <175>;
+            quick-tap-ms = <175>;
+            require-prior-idle-ms = <125>;
+            flavor = "balanced";
+        };
+
         ea_m: ea_m {
             compatible = "zmk,behavior-mod-morph";
             label = "EA_M";
