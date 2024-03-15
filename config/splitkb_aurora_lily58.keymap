@@ -7,6 +7,7 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/rgb.h>
 
 &led_strip { chain-length = <29>; };
@@ -36,7 +37,7 @@
             bindings = <&none>, <&none>;
         };
 
-         lt_backspace: lt_backspace {
+        lt_backspace: lt_backspace {
             compatible = "zmk,behavior-hold-tap";
             label = "LT_BACKSPACE";
             bindings = <&mo>, <&kp>;
@@ -119,7 +120,6 @@
     };
 
     macros {
-
         DK_QMARK: DK_QMARK {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
@@ -248,7 +248,6 @@
             wait-ms = <0>;
         };
 
-
         next_win: next_win {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
@@ -338,12 +337,11 @@
 
         default_layer {
             bindings = <
-&kp ESC         &kp N1      &kp N2      &kp N3        &kp N4            &kp N5                                           &kp N6                     &kp N7       &kp N8         &kp N9          &kp N0              &DK_APOS
-&kp TAB         &kp Q       &kp W       &kp E         &kp R             &kp T                                            &kp Y                      &kp U        &kp I          &kp O           &kp P               &kp LEFT_BRACKET
-&kp LEFT_SHIFT  &kp A      &kp S       &kp D         &kp F             &kp G                                            &kp H                      &kp J        &kp K          &kp L           &mt RIGHT_GUI SEMI  &kp APOS
-&kp LCTRL       &kp Z       &kp X       &kp C         &kp V             &kp B      &kp C_MUTE    &mt LC(N0) PRINTSCREEN  &kp N                      &kp M        &kp COMMA      &kp PERIOD      &kp FSLH            &mt RIGHT_SHIFT CAPSLOCK
-                                        &kp LEFT_ALT  &kp ESCAPE        &lt 1 TAB  &kp SPACE     &kp ENTER               &lt_backspace 2 BACKSPACE  &kp DEL      &mt RALT NUHS
-
+&kp ESC         &kp N1  &kp N2  &kp N3        &kp N4  &kp N5                                        &kp N6                 &kp N7     &kp N8     &kp N9      &kp N0              &DK_APOS
+&kp TAB         &kp Q   &kp W   &kp E         &kp R   &kp T                                         &kp Y                  &kp U      &kp I      &kp O       &kp P               &kp LEFT_BRACKET
+&kp LEFT_SHIFT  &kp A   &kp S   &kp D         &kp F   &kp G                                         &kp H                  &kp J      &kp K      &kp L       &mt RIGHT_GUI SEMI  &kp APOS
+&kp LCTRL       &kp Z   &kp X   &kp C         &kp V   &kp B   &kp C_MUTE    &mt LC(N0) PRINTSCREEN  &kp N                  &kp M      &kp COMMA  &kp PERIOD  &kp FSLH            &mt RIGHT_SHIFT CAPSLOCK
+                                &kp LEFT_WIN  &to 3   &to 1   &kp SPACE     &kp BACKSPACE           &lt_backspace 2 ENTER  &kp ENTER  &kp EQUAL
             >;
 
             sensor-bindings =
