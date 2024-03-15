@@ -75,15 +75,6 @@
             mods = <(MOD_LSFT)>;
         };
 
-        jump5: jump5 {
-            compatible = "zmk,behavior-sensor-rotate";
-            label = "JUMP5";
-            #sensor-binding-cells = <0>;
-            bindings = <&down5>, <&up5>;
-
-            tap-ms = <1>;
-        };
-
         change_win: change_win {
             compatible = "zmk,behavior-sensor-rotate";
             label = "CHANGE_WIN";
@@ -257,19 +248,6 @@
             wait-ms = <0>;
         };
 
-        down5: down5 {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp DOWN_ARROW &kp DOWN_ARROW &kp DOWN_ARROW &kp DOWN_ARROW &kp DOWN_ARROW>;
-            label = "DOWN5";
-        };
-
-        up5: up5 {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp UP_ARROW &kp UP_ARROW &kp UP_ARROW &kp UP_ARROW &kp UP_ARROW>;
-            label = "UP5";
-        };
 
         next_win: next_win {
             compatible = "zmk,behavior-macro";
