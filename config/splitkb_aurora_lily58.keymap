@@ -10,6 +10,40 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/rgb.h>
 
+#define DK_AA LBKT
+#define DK_AE SEMI
+#define DK_OE SQT
+
+// Shifted characters
+#define DK_SEMI LS(COMMA) // ;
+#define DK_COLON LS(DOT) // :
+#define DK_PLUS MINUS // +
+#define DK_MINUS FSLH // -
+#define DK_EQ LS(N0) // = 
+#define DK_QUES UNDER // _ 
+#define DK_LESS GRAVE // <
+#define DK_MORE LS(GRAVE) // >
+#define DK_PIPE RA(I) // |
+#define DK_QUOTE AT // "
+#define DK_AT RA(BSLH) // @
+#define DK_BSLH RA(RS(N7)) // 
+#define DK_SLH AMPERSAND // ERROR
+#define DK_AMPS CARET // ampersand
+#define DK_DLLR NUBS 
+#define DK_UNDER LS(FSLH)
+#define DK_TILDE LA(RBKT)
+#define DK_HAT RBRC
+#define DK_UMLAUT LG(RBKT)
+#define DK_TICK BSLH // 
+#define DK_LPRN LS(N8)	// (
+#define DK_RPRN LS(N9)	// )
+#define DK_LCBR RA(RS(N8))  // {
+#define DK_RCBR RA(RS(N9))	// }
+#define DK_LBRC RA(N8)	// [
+#define DK_RBRC RA(N9)	// ]
+#define CMD_SPC RG(SPACE)
+#define UE RA(U)       
+
 &led_strip { chain-length = <29>; };
 
 &left_encoder {
@@ -107,40 +141,7 @@
         };
     };
 
-    macros {
-        #define DK_AA LBKT
-        #define DK_AE SEMI
-        #define DK_OE SQT
-        
-        // Shifted characters
-        #define DK_SEMI LS(COMMA) // ;
-        #define DK_COLON LS(DOT) // :
-        #define DK_PLUS MINUS // +
-        #define DK_MINUS FSLH // -
-        #define DK_EQ LS(N0) // = 
-        #define DK_QUES UNDER // _ 
-        #define DK_LESS GRAVE // <
-        #define DK_MORE LS(GRAVE) // >
-        #define DK_PIPE RA(I) // |
-        #define DK_QUOTE AT // "
-        #define DK_AT RA(BSLH) // @
-        #define DK_BSLH RA(RS(N7)) // 
-        #define DK_SLH AMPERSAND // ERROR
-        #define DK_AMPS CARET // ampersand
-        #define DK_DLLR NUBS 
-        #define DK_UNDER LS(FSLH)
-        #define DK_TILDE LA(RBKT)
-        #define DK_HAT RBRC
-        #define DK_UMLAUT LG(RBKT)
-        #define DK_TICK BSLH // 
-        #define DK_LPRN LS(N8)	// (
-        #define DK_RPRN LS(N9)	// )
-        #define DK_LCBR RA(RS(N8))  // {
-        #define DK_RCBR RA(RS(N9))	// }
-        #define DK_LBRC RA(N8)	// [
-        #define DK_RBRC RA(N9)	// ]
-        #define CMD_SPC RG(SPACE)
-        #define UE RA(U)        
+    macros { 
 
         DK_QMARK: DK_QMARK {
             compatible = "zmk,behavior-macro";
