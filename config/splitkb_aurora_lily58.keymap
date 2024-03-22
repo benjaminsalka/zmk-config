@@ -150,40 +150,6 @@
     };
 
     macros {
-        DK_QMARK: DK_QMARK {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kt UNDERSCORE>;
-            label = "DK_QMARK";
-        };
-
-        DK_APOS: DK_APOS {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp NUHS>;
-            label = "DK_APOS";
-        };
-
-        DK_LESS: DK_LESS {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp NUBS>;
-            label = "DK_LESS";
-        };
-
-        DK_GREATER: DK_GREATER {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kt LS(NUBS)>;
-            label = "DK_GREATER";
-        };
-
-        DK_PIPE: DK_PIPE {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp RA(EQUAL)>;
-            label = "DK_PIPE";
-        };
 
         ae: ae {
             compatible = "zmk,behavior-macro";
@@ -361,33 +327,6 @@
             label = "BASE_LAYER";
         };
 
-        dk_quote: dk_quote {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp AT>;
-            label = "DK_QUOTE";
-        };
-
-        dk_percent: dk_percent {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp CARET>;
-            label = "DK_PERCENT";
-        };
-
-        dk_slash: dk_slash {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp ASTERISK>;
-            label = "DK_SLASH";
-        };
-
-        dk_equal: dk_equal {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp SLASH>;
-            label = "DK_EQUAL";
-        };
     };
 
     keymap {
