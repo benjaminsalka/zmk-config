@@ -7,7 +7,6 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
-#include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/rgb.h>
 
 #define DK_AA LBKT
@@ -150,7 +149,6 @@
     };
 
     macros {
-
         ae: ae {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
@@ -326,7 +324,6 @@
             bindings = <&rgb_ug RGB_OFF &to 0>;
             label = "BASE_LAYER";
         };
-
     };
 
     keymap {
@@ -334,11 +331,11 @@
 
         default_layer {
             bindings = <
-&kp ESC              &kp N1  &kp N2  &kp N3        &kp N4                  &kp N5                                  &kp N6  &kp N7     &kp N8     &kp N9      &kp N0         &kp DELETE
-&kp TAB              &kp Q   &kp W   &kp E         &kp R                   &kp T                                   &kp Y   &kp U      &kp I      &kp O       &kp P          &kp LEFT_BRACKET
-&shift_ctrl_dance    &kp A   &kp S   &kp D         &kp F                   &kp G                                   &kp H   &kp J      &kp K      &kp L       &kp SEMICOLON  &kp APOS
-&hold_layer 4 LCTRL  &kp Z   &kp X   &kp C         &kp V                   &kp B    &kp C_MUTE    &kp PRINTSCREEN  &kp N   &kp M      &kp COMMA  &kp PERIOD  &kp FSLH       &kp MINUS
-                                     &kp LEFT_WIN  &hold_layer 3 LEFT_ALT  &layer1  &kp SPACE     &kp BACKSPACE    &mo 2   &kp ENTER  &kp RALT
+&kp ESC              &kp N1  &kp N2  &kp N3        &kp N4                  &kp N5                                                                    &kp N6  &kp N7     &kp N8     &kp N9      &kp N0         &kp DELETE
+&kp TAB              &kp Q   &kp W   &kp E         &kp R                   &kp T                                                                     &kp Y   &kp U      &kp I      &kp O       &kp P          &kp LEFT_BRACKET
+&shift_ctrl_dance    &kp A   &kp S   &kp D         &kp F                   &kp G                                                                     &kp H   &kp J      &kp K      &kp L       &kp SEMICOLON  &kp APOS
+&hold_layer 4 LCTRL  &kp Z   &kp X   &kp C         &kp V                   &kp B                                      &kp C_MUTE    &kp PRINTSCREEN  &kp N   &kp M      &kp COMMA  &kp PERIOD  &kp FSLH       &kp MINUS
+                                     &kp LEFT_WIN  &hold_layer 3 LEFT_ALT  &RGB_layer 1 RGB_COLOR_HSB_VAL(199,90,49)  &kp SPACE     &kp BACKSPACE    &mo 2   &kp ENTER  &kp RALT
             >;
 
             sensor-bindings =
