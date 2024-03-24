@@ -317,6 +317,13 @@
             bindings = <&rgb_ug RGB_OFF &to 0>;
             label = "BASE_LAYER";
         };
+
+        DK_AA: DK_AA {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LBKT>;
+            label = "DK_AA";
+        };
     };
 
     keymap {
