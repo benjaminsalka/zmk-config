@@ -317,11 +317,11 @@
 
         default_layer {
             bindings = <
-&kp ESC              &kp N1  &kp N2  &kp N3    &kp N4                  &kp N5                                  &kp N6     &kp N7     &kp N8                    &kp N9            &kp N0           &kp DEL
-&kp TAB              &kp Q   &kp W   &kp E     &kp R                   &kp T                                   &kp Y      &kp U      &kp I                     &kp O             &kp P            &kp RA(W)
-&shift_dance         &kp A   &kp S   &kp D     &kp F                   &kp G                                   &kp H      &kp J      &kp K                     &kp L             &ea_m            &oe_m
-&hold_layer 4 LCTRL  &kp Z   &kp X   &kp C     &kp V                   &kp B      &kp C_MUTE    &kp LG(D)      &kp N      &kp M      &mt SEMICOLON COMMA       &mt COLON PERIOD  &mt MINUS SLASH  &shift_ctrl_dance
-                                     &kp LWIN  &hold_layer 3 LEFT_ALT  &L1_dance  &kp SPACE     &kp BACKSPACE  &L2_dance  &kp ENTER  &mt RIGHT_ALT LG(PERIOD)
+&kp ESC              &kp N1  &kp N2  &kp N3    &kp N4                  &kp N5                                    &kp N6     &kp N7     &kp N8                    &kp N9            &kp N0           &kp DEL
+&kp TAB              &kp Q   &kp W   &kp E     &kp R                   &kp T                                     &kp Y      &kp U      &kp I                     &kp O             &kp P            &kp RA(W)
+&shift_dance         &kp A   &kp S   &kp D     &kp F                   &kp G                                     &kp H      &kp J      &kp K                     &kp L             &kp RA(Z)        &kp RA(L)
+&hold_layer 4 LCTRL  &kp Z   &kp X   &kp C     &kp V                   &kp B      &kp C_MUTE    &kp PRINTSCREEN  &kp N      &kp M      &mt SEMICOLON COMMA       &mt COLON PERIOD  &mt MINUS SLASH  &kp EQUAL
+                                     &kp LWIN  &hold_layer 3 LEFT_ALT  &L1_dance  &kp SPACE     &kp BACKSPACE    &L2_dance  &kp ENTER  &mt RIGHT_ALT LG(PERIOD)
             >;
 
             sensor-bindings =
