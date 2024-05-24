@@ -9,41 +9,6 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/rgb.h>
 
-#define DK_AA LBKT
-#define DK_AE SEMI
-#define DK_OE SQT
-
-// Shifted characters
-
-#define DK_SEMI LS(COMMA) // ;
-#define DK_COLON LS(DOT) // :
-#define DK_PLUS MINUS // +
-#define DK_MINUS FSLH // -
-#define DK_EQ LS(N0) // =
-#define DK_QUES UNDER // _
-#define DK_LESS GRAVE // <
-#define DK_MORE LS(GRAVE) // >
-#define DK_PIPE RA(I) // |
-#define DK_QUOTE AT // "
-#define DK_AT RA(BSLH) // @
-#define DK_BSLH RA(RS(N7)) //
-#define DK_SLH AMPERSAND // ERROR
-#define DK_AMPS CARET // ampersand
-#define DK_DLLR NUBS
-#define DK_UNDER LS(FSLH)
-#define DK_TILDE LA(RBKT)
-#define DK_HAT RBRC
-#define DK_UMLAUT LG(RBKT)
-#define DK_TICK BSLH //
-#define DK_LPRN LS(N8)	// (
-#define DK_RPRN LS(N9)	// )
-#define DK_LCBR RA(RS(N8))  // {
-#define DK_RCBR RA(RS(N9))	// }
-#define DK_LBRC RA(N8)	// [
-#define DK_RBRC RA(N9)	// ]
-#define CMD_SPC RG(SPACE)
-#define UE RA(U)
-
 &led_strip { chain-length = <29>; };
 
 &left_encoder {
@@ -60,6 +25,11 @@
     compatible = "zmk,keymap-sensors";
     sensors = <&left_encoder &right_encoder>;
     triggers-per-rotation = <24>;
+};
+
+&mt {
+    tapping-term-ms = <200>;
+    quick-tap-ms = <300>;
 };
 
 / {
@@ -96,6 +66,15 @@
 
             #binding-cells = <0>;
             mods = <(MOD_LSFT)>;
+        };
+
+        jump5: jump5 {
+            compatible = "zmk,behavior-sensor-rotate";
+            label = "JUMP5";
+            #sensor-binding-cells = <0>;
+            bindings = <&down5>, <&up5>;
+
+            tap-ms = <1>;
         };
 
         change_win: change_win {
@@ -235,6 +214,20 @@
             wait-ms = <0>;
         };
 
+        down5: down5 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp DOWN_ARROW &kp DOWN_ARROW &kp DOWN_ARROW &kp DOWN_ARROW &kp DOWN_ARROW>;
+            label = "DOWN5";
+        };
+
+        up5: up5 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp UP_ARROW &kp UP_ARROW &kp UP_ARROW &kp UP_ARROW &kp UP_ARROW>;
+            label = "UP5";
+        };
+
         next_win: next_win {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
@@ -317,13 +310,6 @@
             bindings = <&rgb_ug RGB_OFF &to 0>;
             label = "BASE_LAYER";
         };
-
-        DK_AA: DK_AA {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp LBKT>;
-            label = "DK_AA";
-        };
     };
 
     keymap {
@@ -331,11 +317,11 @@
 
         default_layer {
             bindings = <
-&kp ESC              &kp N1  &kp N2  &kp N3        &kp N4                  &kp N5                                    &kp N6  &kp N7     &kp N8                    &kp N9      &kp N0         &kp DELETE
-&kp TAB              &kp Q   &kp W   &kp E         &kp R                   &kp T                                     &kp Y   &kp U      &kp I                     &kp O       &kp P          &kp LEFT_BRACKET
-&shift_ctrl_dance    &kp A   &kp S   &kp D         &kp F                   &kp G                                     &kp H   &kp J      &kp K                     &kp L       &kp SEMICOLON  &kp APOS
-&hold_layer 4 LCTRL  &kp Z   &kp X   &kp C         &kp V                   &kp B      &kp C_MUTE    &kp PRINTSCREEN  &kp N   &kp M      &kp COMMA                 &kp PERIOD  &kp FSLH       &kp MINUS
-                                     &kp LEFT_WIN  &hold_layer 3 LEFT_ALT  &L1_dance  &kp SPACE     &kp BACKSPACE    &mo 2   &kp ENTER  &mt RIGHT_ALT LG(PERIOD)
+&kp ESC              &kp N1  &kp N2  &kp N3    &kp N4                  &kp N5                                  &kp N6     &kp N7     &kp N8               &kp N9            &kp N0           &kp DEL
+&kp TAB              &kp Q   &kp W   &kp E     &kp R                   &kp T                                   &kp Y      &kp U      &kp I                &kp O             &kp P            &aa_m
+&shift_dance         &kp A   &kp S   &kp D     &kp F                   &kp G                                   &kp H      &kp J      &kp K                &kp L             &ea_m            &oe_m
+&hold_layer 4 LCTRL  &kp Z   &kp X   &kp C     &kp V                   &kp B      &kp C_MUTE    &kp LG(D)      &kp N      &kp M      &mt SEMICOLON COMMA  &mt COLON PERIOD  &mt MINUS SLASH  &shift_ctrl_dance
+                                     &kp LWIN  &hold_layer 3 LEFT_ALT  &L1_dance  &kp SPACE     &kp BACKSPACE  &L2_dance  &kp ENTER  &kp EQUAL
             >;
 
             sensor-bindings =
@@ -345,11 +331,11 @@
 
         lower_layer {
             bindings = <
-&trans  &trans                          &trans     &kp DK_LPRN  &kp DK_RPRN  &trans                                         &kp LEFT_PARENTHESIS  &kp N7        &kp N8  &kp N9  &kp RIGHT_PARENTHESIS  &trans
-&trans  &mt DOUBLE_QUOTES SINGLE_QUOTE  &trans     &kp RA(N7)   &kp RA(N0)   &kp TILDE                                      &trans                &kp NUMBER_4  &kp N5  &kp N6  &kp PLUS               &kp CARET
-&trans  &kp PLUS                        &kp UNDER  &kp RA(N8)   &kp RA(N9)   &kp LESS_THAN                                  &kp GREATER_THAN      &kp N1        &kp N2  &kp N3  &kp MINUS              &kp STAR
-&trans  &trans                          &trans     &trans       &kp PIPE     &kp BACKSLASH  &trans            &kp LC(HOME)  &kp KP_PLUS           &kp N0        &trans  &trans  &trans                 &trans
-                                                   &trans       &trans       &base_layer    &kp UNDERSCORE    &trans        &base_layer           &trans        &trans
+&trans  &trans                          &trans     &kp LBKT              &kp RBKT               &trans                                         &kp LEFT_PARENTHESIS  &kp N7        &kp N8  &kp N9  &kp RIGHT_PARENTHESIS  &trans
+&trans  &mt DOUBLE_QUOTES SINGLE_QUOTE  &trans     &kp LEFT_BRACE        &kp RIGHT_BRACE        &kp TILDE                                      &trans                &kp NUMBER_4  &kp N5  &kp N6  &kp PLUS               &kp CARET
+&trans  &kp GRAVE                       &kp UNDER  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp LESS_THAN                                  &kp GREATER_THAN      &kp N1        &kp N2  &kp N3  &kp MINUS              &kp STAR
+&trans  &trans                          &trans     &trans                &kp PIPE               &kp BACKSLASH  &trans            &kp LC(HOME)  &kp KP_PLUS           &kp N0        &trans  &trans  &trans                 &trans
+                                                   &trans                &trans                 &base_layer    &kp UNDERSCORE    &trans        &base_layer           &trans        &trans
             >;
 
             sensor-bindings =
@@ -373,11 +359,11 @@
 
         alt_layer {
             bindings = <
-&trans  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &trans  &trans                       &rgb_ug RGB_COLOR_HSB(0,0,22)  &rgb_ug RGB_COLOR_HSB(235,70,12)  &rgb_ug RGB_COLOR_HSB(289,70,13)  &rgb_ug RGB_COLOR_HSB(164,73,13)  &rgb_ug RGB_EFF  &rgb_ug RGB_TOG
-&trans  &trans        &trans        &trans        &trans  &trans                       &trans                         &trans                            &trans                            &rgb_ug RGB_SPI                   &rgb_ug RGB_HUI  &rgb_ug RGB_BRI
-&trans  &trans        &trans        &trans        &trans  &trans                       &trans                         &trans                            &trans                            &rgb_ug RGB_SPD                   &rgb_ug RGB_HUD  &rgb_ug RGB_BRD
-&trans  &trans        &trans        &trans        &trans  &trans  &trans    &kp LC(W)  &trans                         &trans                            &trans                            &trans                            &trans           &trans
-                                    &trans        &trans  &trans  &trans    &trans     &trans                         &trans                            &bt BT_CLR
+&trans  &bt BT_SEL 0   &bt BT_SEL 1   &bt BT_SEL 2  &kp F4  &trans                       &rgb_ug RGB_COLOR_HSB(0,0,22)  &rgb_ug RGB_COLOR_HSB(235,70,12)  &rgb_ug RGB_COLOR_HSB(289,70,13)  &rgb_ug RGB_COLOR_HSB(164,73,13)  &rgb_ug RGB_EFF  &rgb_ug RGB_TOG
+&trans  &bt BT_DISC 0  &bt BT_DISC 1  &trans        &trans  &trans                       &trans                         &trans                            &trans                            &rgb_ug RGB_SPI                   &rgb_ug RGB_HUI  &rgb_ug RGB_BRI
+&trans  &trans         &trans         &trans        &trans  &trans                       &trans                         &trans                            &trans                            &rgb_ug RGB_SPD                   &rgb_ug RGB_HUD  &rgb_ug RGB_BRD
+&trans  &trans         &trans         &trans        &trans  &trans  &trans    &kp LC(W)  &trans                         &trans                            &trans                            &trans                            &trans           &trans
+                                      &trans        &trans  &trans  &trans    &trans     &trans                         &trans                            &bt BT_CLR
             >;
 
             sensor-bindings =
@@ -387,16 +373,26 @@
 
         ctrl_layer {
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans                          &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans                          &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans                          &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &kp LC(T)    &kp LC(W)  &trans  &trans  &trans  &trans  &trans  &trans
-                        &trans  &trans  &trans  &trans       &trans     &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans                       &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans                       &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans                       &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans    &kp LC(W)  &trans  &trans  &trans  &trans  &trans  &trans
+                        &trans  &trans  &trans  &trans    &trans     &trans  &trans  &trans
             >;
 
             sensor-bindings =
                 <&inc_dec_kp 0 0>,
                 <&inc_dec_kp PAGE_UP PAGE_DOWN>;
+        };
+
+        shift_layer {
+            bindings = <
+&trans  &trans  &trans  &trans  &trans  &trans                    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans                    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans                    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans  &trans
+                        &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans
+            >;
         };
     };
 };
