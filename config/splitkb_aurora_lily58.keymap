@@ -343,13 +343,13 @@
                 <&inc_dec_kp PAGE_UP PAGE_DOWN>;
         };
 
-        lower_layer {
+        sym_layer {
             bindings = <
-&trans  &trans                          &trans     &kp DK_LPRN  &kp DK_RPRN  &trans                                         &kp LEFT_PARENTHESIS  &kp N7        &kp N8  &kp N9  &kp RIGHT_PARENTHESIS  &trans
-&trans  &mt DOUBLE_QUOTES SINGLE_QUOTE  &trans     &kp RA(N7)   &kp RA(N0)   &kp TILDE                                      &trans                &kp NUMBER_4  &kp N5  &kp N6  &kp PLUS               &kp CARET
-&trans  &kp PLUS                        &kp UNDER  &kp RA(N8)   &kp RA(N9)   &kp LESS_THAN                                  &kp GREATER_THAN      &kp N1        &kp N2  &kp N3  &kp MINUS              &kp STAR
-&trans  &trans                          &trans     &trans       &kp PIPE     &kp BACKSLASH  &trans            &kp LC(HOME)  &kp KP_PLUS           &kp N0        &trans  &trans  &trans                 &trans
-                                                   &trans       &trans       &base_layer    &kp UNDERSCORE    &trans        &base_layer           &trans        &trans
+&trans  &kp PIPE                        &trans     &trans                &kp RA(NUMBER_5)       &trans                                         &kp LEFT_PARENTHESIS  &kp N7        &kp N8  &kp N9  &kp RIGHT_PARENTHESIS  &trans
+&trans  &mt DOUBLE_QUOTES SINGLE_QUOTE  &trans     &kp LEFT_BRACE        &kp RIGHT_BRACE        &kp TILDE                                      &trans                &kp NUMBER_4  &kp N5  &kp N6  &kp PLUS               &kp CARET
+&trans  &kp PLUS                        &kp UNDER  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp LESS_THAN                                  &kp GREATER_THAN      &kp N1        &kp N2  &kp N3  &kp MINUS              &kp STAR
+&trans  &trans                          &trans     &kp LBKT              &kp RBKT               &kp C          &trans            &kp LC(HOME)  &kp KP_PLUS           &kp N0        &trans  &trans  &trans                 &trans
+                                                   &trans                &trans                 &base_layer    &kp UNDERSCORE    &trans        &base_layer           &trans        &trans
             >;
 
             sensor-bindings =
@@ -357,7 +357,7 @@
                 <&inc_dec_kp UP_ARROW DOWN_ARROW>;
         };
 
-        raise_layer {
+        nav_layer {
             bindings = <
 &trans  &kp F1    &kp F2           &kp F3        &kp F4         &kp F5                               &kp F6             &kp F7         &kp F8          &kp F9            &kp F10    &kp DELETE
 &trans  &trans    &kp PRINTSCREEN  &kp LG(UP)    &kp LG(TAB)    &trans                               &kp C_AC_UNDO      &kp HOME       &kp UP_ARROW    &kp END           &kp PG_UP  &kp F12
