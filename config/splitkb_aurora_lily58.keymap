@@ -71,33 +71,6 @@
             bindings = <&none>, <&none>;
         };
 
-        ea_m: ea_m {
-            compatible = "zmk,behavior-mod-morph";
-            label = "EA_M";
-            bindings = <&ae>, <&AE_>;
-
-            #binding-cells = <0>;
-            mods = <(MOD_LSFT)>;
-        };
-
-        oe_m: oe_m {
-            compatible = "zmk,behavior-mod-morph";
-            label = "OE_M";
-            bindings = <&oe>, <&OE_>;
-
-            #binding-cells = <0>;
-            mods = <(MOD_LSFT)>;
-        };
-
-        aa_m: aa_m {
-            compatible = "zmk,behavior-mod-morph";
-            label = "AA_M";
-            bindings = <&aa>, <&AA_>;
-
-            #binding-cells = <0>;
-            mods = <(MOD_LSFT)>;
-        };
-
         change_win: change_win {
             compatible = "zmk,behavior-sensor-rotate";
             label = "CHANGE_WIN";
@@ -132,109 +105,9 @@
             #binding-cells = <0>;
             bindings = <&kp LEFT_SHIFT>, <&kp LC(LEFT_SHIFT)>;
         };
-
-        enter_ctrl_dance: enter_ctrl_dance {
-            compatible = "zmk,behavior-tap-dance";
-            label = "ENTER_CTRL_DANCE";
-            #binding-cells = <0>;
-            bindings = <&kp ENTER>, <&kp LCTRL>;
-        };
     };
 
     macros {
-        ae: ae {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings =
-                <&macro_press>,
-                <&kp RIGHT_ALT>,
-                <&macro_tap>,
-                <&kp KP_NUMBER_1 &kp KP_NUMBER_4 &kp KP_NUMBER_5>,
-                <&macro_release>,
-                <&kp RIGHT_ALT>;
-
-            label = "AE";
-            tap-ms = <1>;
-            wait-ms = <0>;
-        };
-
-        AE_: AE_ {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings =
-                <&macro_press>,
-                <&kp RIGHT_ALT>,
-                <&macro_tap>,
-                <&kp KP_NUMBER_1 &kp KP_N4 &kp KP_NUMBER_6>,
-                <&macro_release>,
-                <&kp RIGHT_ALT>;
-
-            label = "AE_";
-            tap-ms = <1>;
-        };
-
-        oe: oe {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings =
-                <&macro_press>,
-                <&kp RIGHT_ALT>,
-                <&macro_tap>,
-                <&kp KP_NUMBER_0 &kp KP_NUMBER_2 &kp KP_N4 &kp KP_NUMBER_8>,
-                <&macro_release>,
-                <&kp RIGHT_ALT>;
-
-            label = "OE";
-            tap-ms = <1>;
-        };
-
-        OE_: OE_ {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings =
-                <&macro_press>,
-                <&kp RIGHT_ALT>,
-                <&macro_tap>,
-                <&kp KP_NUMBER_0 &kp KP_NUMBER_2 &kp KP_NUMBER_1 &kp KP_NUMBER_6>,
-                <&macro_release>,
-                <&kp RIGHT_ALT>;
-
-            label = "OE_";
-            tap-ms = <1>;
-        };
-
-        aa: aa {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings =
-                <&macro_press>,
-                <&kp RIGHT_ALT>,
-                <&macro_tap>,
-                <&kp KP_NUMBER_1 &kp KP_NUMBER_3 &kp KP_NUMBER_4>,
-                <&macro_release>,
-                <&kp RIGHT_ALT>;
-
-            label = "AA";
-            tap-ms = <1>;
-            wait-ms = <0>;
-        };
-
-        AA_: AA_ {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings =
-                <&macro_press>,
-                <&kp RIGHT_ALT>,
-                <&macro_tap>,
-                <&kp KP_NUMBER_1 &kp KP_NUMBER_4 &kp KP_NUMBER_3>,
-                <&macro_release>,
-                <&kp RIGHT_ALT>;
-
-            label = "AA_";
-            tap-ms = <1>;
-            wait-ms = <0>;
-        };
-
         next_win: next_win {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
@@ -317,13 +190,6 @@
             bindings = <&rgb_ug RGB_OFF &to 0>;
             label = "BASE_LAYER";
         };
-
-        DK_AA: DK_AA {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp LBKT>;
-            label = "DK_AA";
-        };
     };
 
     keymap {
@@ -359,11 +225,11 @@
 
         nav_layer {
             bindings = <
-&trans  &kp F1    &kp F2           &kp F3        &kp F4         &kp F5                               &kp F6             &kp F7         &kp F8          &kp F9            &kp F10    &kp DELETE
-&trans  &trans    &kp PRINTSCREEN  &kp LG(UP)    &kp LG(TAB)    &trans                               &kp C_AC_UNDO      &kp HOME       &kp UP_ARROW    &kp END           &kp PG_UP  &kp F12
-&trans  &kp EXCL  &kp LG(LEFT)     &kp LG(DOWN)  &kp LG(RIGHT)  &kp LESS_THAN                        &kp LG(C_AC_REDO)  &kp LEFT       &kp DOWN_ARROW  &kp RIGHT         &kp PG_DN  &kp TILDE
-&trans  &trans    &trans           &trans        &kp PIPE       &kp BACKSLASH  &trans    &kp LC(N0)  &trans             &kp C_AC_BACK  &kp PLUS        &kp C_AC_FORWARD  &kp RBRC   &kp PIPE
-                                   &trans        &trans         &base_layer    &trans    &trans      &base_layer        &trans         &trans
+&trans  &kp F1    &kp F2        &kp F3        &kp F4         &kp F5                               &kp F6             &kp F7         &kp F8          &kp F9            &kp F10    &kp DELETE
+&trans  &trans    &trans        &kp LG(UP)    &kp LG(TAB)    &trans                               &kp C_AC_UNDO      &kp HOME       &kp UP_ARROW    &kp END           &kp PG_UP  &kp F12
+&trans  &kp EXCL  &kp LG(LEFT)  &kp LG(DOWN)  &kp LG(RIGHT)  &kp LESS_THAN                        &kp LG(C_AC_REDO)  &kp LEFT       &kp DOWN_ARROW  &kp RIGHT         &kp PG_DN  &kp TILDE
+&trans  &trans    &trans        &trans        &kp PIPE       &kp BACKSLASH  &trans    &kp LC(N0)  &trans             &kp C_AC_BACK  &kp PLUS        &kp C_AC_FORWARD  &kp RBRC   &kp PIPE
+                                &trans        &trans         &base_layer    &trans    &trans      &base_layer        &trans         &trans
             >;
 
             sensor-bindings =
