@@ -99,11 +99,11 @@
             bindings = <&kp LEFT_SHIFT>, <&caps_word>;
         };
 
-        shift_ctrl_dance: shift_ctrl_dance {
+        ctrl_shift_dance: ctrl_shift_dance {
             compatible = "zmk,behavior-tap-dance";
-            label = "SHIFT_CTRL_DANCE";
+            label = "CTRL_SHIFT_DANCE";
             #binding-cells = <0>;
-            bindings = <&kp LEFT_SHIFT>, <&kp LC(LEFT_SHIFT)>;
+            bindings = <&hold_layer 4 LCTRL>, <&kp LC(LEFT_SHIFT)>;
         };
     };
 
@@ -197,11 +197,11 @@
 
         default_layer {
             bindings = <
-&kp ESC              &kp N1  &kp N2  &kp N3        &kp N4        &kp N5                                    &kp N6  &kp N7     &kp N8                    &kp N9            &kp N0     &kp EQUAL
-&lt 3 TAB            &kp Q   &kp W   &kp E         &kp R         &kp T                                     &kp Y   &kp U      &kp I                     &kp O             &kp P      &kp RA(W)
-&shift_ctrl_dance    &kp A   &kp S   &kp D         &kp F         &kp G                                     &kp H   &kp J      &kp K                     &kp L             &kp RA(Z)  &kp RA(L)
-&hold_layer 4 LCTRL  &kp Z   &kp X   &kp C         &kp V         &kp B      &kp C_MUTE    &kp PRINTSCREEN  &kp N   &kp M      &mt SEMI COMMA            &mt COLON PERIOD  &kp MINUS  &kp SLASH
-                                     &kp LEFT_WIN  &kp LEFT_ALT  &L1_dance  &kp SPACE     &kp BACKSPACE    &mo 2   &kp ENTER  &mt RIGHT_ALT LG(PERIOD)
+&kp ESC            &kp N1  &kp N2  &kp N3        &kp N4        &kp N5                                    &kp N6  &kp N7     &kp N8                    &kp N9            &kp N0     &kp EQUAL
+&lt 3 TAB          &kp Q   &kp W   &kp E         &kp R         &kp T                                     &kp Y   &kp U      &kp I                     &kp O             &kp P      &kp RA(W)
+&kp LEFT_SHIFT     &kp A   &kp S   &kp D         &kp F         &kp G                                     &kp H   &kp J      &kp K                     &kp L             &kp RA(Z)  &kp RA(L)
+&ctrl_shift_dance  &kp Z   &kp X   &kp C         &kp V         &kp B      &kp C_MUTE    &kp PRINTSCREEN  &kp N   &kp M      &mt SEMI COMMA            &mt COLON PERIOD  &kp MINUS  &kp SLASH
+                                   &kp LEFT_WIN  &kp LEFT_ALT  &L1_dance  &kp SPACE     &kp BACKSPACE    &mo 2   &kp ENTER  &mt RIGHT_ALT LG(PERIOD)
             >;
 
             sensor-bindings =
